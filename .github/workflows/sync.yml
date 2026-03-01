@@ -1,9 +1,9 @@
 name: X to Discord Sync
 
-on:
-  schedule:
-    - cron: "*/5 * * * *"   # 每 5 分鐘跑一次
+"on":
   workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
 
 permissions:
   contents: write
@@ -21,7 +21,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install feedparser requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser requests
 
       - name: Run sync
         env:
