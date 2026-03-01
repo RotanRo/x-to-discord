@@ -27,7 +27,7 @@ jobs:
 
       - name: Run sync
         env:
-          RSS_URL: "https://rsshub.app/twitter/user/HomesickVtuber"
+          RSS_URL: "https://openrss.org/x.com/HomesickVtuber"
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python sync.py
 
